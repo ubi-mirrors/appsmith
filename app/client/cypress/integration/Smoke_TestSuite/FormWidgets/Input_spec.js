@@ -20,7 +20,7 @@ describe("Input Widget Functionality", function() {
       .should("contain", this.data.defaultdata);
     cy.get(commonlocators.deleteWidget).click();
     cy.get(explorer.addWidget).click();
-    cy.dragAndDropToCanvas("inputwidget");
+    cy.dragAndDropToCanvas("inputwidget", { x: 300, y: -300 });
     cy.get(widgetsPage.inputWidget + " " + "input")
       .invoke("attr", "value")
       .should("not.contain", this.data.defaultdata);
